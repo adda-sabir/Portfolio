@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FenetrePrincipale</class>
+ <widget class="QTabWidget" name="FenetrePrincipale">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>950</width>
+    <height>222</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Voodoo® – Gestion énergétique industrielle</string>
+  </property>
+  <property name="currentIndex">
+   <number>2</number>
+  </property>
+  <widget class="QWidget" name="tabConfiguration">
+   <attribute name="title">
+    <string>⚙️ Configuration</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="outerLayoutConfig">
+    <item>
+     <widget class="QScrollArea" name="scrollConfig">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollContentsConfig">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>913</width>
+         <height>1166</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="layoutConfig">
+        <item>
+         <widget class="QGroupBox" name="grpAjouterMachine">
+          <property name="title">
+           <string>Ajouter une machine</string>
+          </property>
+          <layout class="QFormLayout" name="formMachine">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Nom machine :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="nomM"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Opérateur :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="operM"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Email :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="mailM"/>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QPushButton" name="btnAjouterMachine">
+             <property name="text">
+              <string>➕ Ajouter machine</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpAjouterProduit">
+          <property name="title">
+           <string>Ajouter un produit</string>
+          </property>
+          <layout class="QFormLayout" name="formProduit">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Nom produit :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="nomP"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Description :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="descP"/>
+           </item>
+           <item row="2" column="0" colspan="2">
+            <widget class="QPushButton" name="btnAjouterProduit">
+             <property name="text">
+              <string>➕ Ajouter produit</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpAjouterTache">
+          <property name="title">
+           <string>Ajouter une tâche à un produit</string>
+          </property>
+          <layout class="QFormLayout" name="formTache">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Produit :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="comboProduitT"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Machine :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="comboMachineT"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Puissance (W) :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSpinBox" name="puissT">
+             <property name="suffix">
+              <string> W</string>
+             </property>
+             <property name="minimum">
+              <number>0</number>
+             </property>
+             <property name="maximum">
+              <number>500000</number>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Durée :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSpinBox" name="dureeT">
+             <property name="suffix">
+              <string> min</string>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>1440</number>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Ordre dans le process :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QSpinBox" name="ordreT">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>99</number>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0" colspan="2">
+            <widget class="QPushButton" name="btnAjouterTache">
+             <property name="text">
+              <string>➕ Ajouter tâche</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnActualiser">
+          <property name="text">
+           <string>🔄 Actualiser les tables</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpMachines">
+          <property name="title">
+           <string>Machines</string>
+          </property>
+          <layout class="QVBoxLayout" name="vLayoutMachines">
+           <item>
+            <widget class="QTableWidget" name="tableMachines">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="hBtnMachines">
+             <item>
+              <widget class="QPushButton" name="btnModifierMachine">
+               <property name="text">
+                <string>✏️ Modifier la machine sélectionnée</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnSupprimerMachine">
+               <property name="text">
+                <string>🗑 Supprimer la machine sélectionnée</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpProduits">
+          <property name="title">
+           <string>Produits</string>
+          </property>
+          <layout class="QVBoxLayout" name="vLayoutProduits">
+           <item>
+            <widget class="QTableWidget" name="tableProduits">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="hBtnProduits">
+             <item>
+              <widget class="QPushButton" name="btnModifierProduit">
+               <property name="text">
+                <string>✏️ Modifier le produit sélectionné</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnSupprimerProduit">
+               <property name="text">
+                <string>🗑 Supprimer le produit sélectionné</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpTaches">
+          <property name="title">
+           <string>Tâches</string>
+          </property>
+          <layout class="QVBoxLayout" name="vLayoutTaches">
+           <item>
+            <widget class="QTableWidget" name="tableTaches">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>200</height>
+              </size>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+             </property>
+             <property name="selectionBehavior">
+              <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="hBtnTaches">
+             <item>
+              <widget class="QPushButton" name="btnModifierTache">
+               <property name="text">
+                <string>✏️ Modifier la tâche sélectionnée</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnSupprimerTache">
+               <property name="text">
+                <string>🗑 Supprimer la tâche sélectionnée</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="tabCommandes">
+   <attribute name="title">
+    <string>📋 Commandes / Prix</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="outerLayoutCommandes">
+    <item>
+     <widget class="QScrollArea" name="scrollCommandes">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollContentsCommandes">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>913</width>
+         <height>519</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="layoutCommandes">
+        <item>
+         <widget class="QLabel" name="label_date">
+          <property name="text">
+           <string>📅</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignRight</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpPrix">
+          <property name="title">
+           <string>Prix de l'électricité</string>
+          </property>
+          <layout class="QVBoxLayout" name="vPrix">
+           <item>
+            <layout class="QHBoxLayout" name="hPrixBoutons">
+             <item>
+              <widget class="QPushButton" name="btnChargerPrix">
+               <property name="text">
+                <string>📈 Charger et afficher les prix du jour</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnVerifierAlertes">
+               <property name="text">
+                <string>⚠️ Vérifier prix négatifs</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="hSeuilPrix">
+             <item>
+              <widget class="QLabel" name="labelSeuil">
+               <property name="text">
+                <string>Seuil d'alerte :</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDoubleSpinBox" name="spinSeuilPrix">
+               <property name="suffix">
+                <string> €/MWh</string>
+               </property>
+               <property name="minimum">
+                <double>-500.000000000000000</double>
+               </property>
+               <property name="maximum">
+                <double>1000.000000000000000</double>
+               </property>
+               <property name="singleStep">
+                <double>5.000000000000000</double>
+               </property>
+               <property name="value">
+                <double>100.000000000000000</double>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnVerifierSeuil">
+               <property name="text">
+                <string>🔔 Vérifier seuil</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpCommande">
+          <property name="title">
+           <string>Ajouter une commande</string>
+          </property>
+          <layout class="QFormLayout" name="formCommande">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Produit :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="comboProduit"/>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QCheckBox" name="checkOptimiser">
+             <property name="text">
+              <string>⚡ Trouver automatiquement l'heure la moins chère</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Heure de départ :</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QTimeEdit" name="heureDepart">
+             <property name="displayFormat">
+              <string>HH:mm</string>
+             </property>
+             <property name="time">
+              <time>
+               <hour>8</hour>
+               <minute>0</minute>
+               <second>0</second>
+              </time>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0" colspan="2">
+            <widget class="QPushButton" name="btnCalculer">
+             <property name="text">
+              <string>💶 Calculer le coût et enregistrer</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelCout">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignmentFlag::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="grpMail">
+          <property name="title">
+           <string>Notifications opérateurs</string>
+          </property>
+          <layout class="QVBoxLayout" name="vMail">
+           <item>
+            <widget class="QPushButton" name="btnEnvoyerMails">
+             <property name="text">
+              <string>📧 Envoyer le planning à tous les opérateurs</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelCommandes">
+          <property name="text">
+           <string>Commandes du jour :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableCommandes">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnActualiserCommandes">
+          <property name="text">
+           <string>🔄 Actualiser</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="tab">
+   <attribute name="title">
+    <string>Pour vous Monsieur </string>
+   </attribute>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPushButton" name="btnnoter">
+      <property name="text">
+       <string>Notez nous Monsieur svp..</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelGif">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
